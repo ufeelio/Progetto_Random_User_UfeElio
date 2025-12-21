@@ -5,7 +5,7 @@ class Ajax {
     
  // Properties, scritte in modo diretto
  //inserisco il server di collegamento
- _URL = "http:localhost:3000" 
+ _URL = "https://randomuser.me" 
  
  // Methods , scritte senza "function" davanti
 

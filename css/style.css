@@ -1,0 +1,15 @@
+*
+{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: content-box; 
+}
+html,body, #wrapper {
+    height: 100%;
+}
+#wrapper{
+    text-align: center;
+    margin: auto;
+    width: 80%;
+    border: 1px solid black;
+}
