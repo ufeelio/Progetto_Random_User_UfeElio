@@ -1,7 +1,0 @@
-critari su cui richiedere le persone
-gender
-number of people
-
-criteri su cui ordinare i dati
-nat
-

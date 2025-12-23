@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- CSS -->
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/card.css" />
     <!-- AXIOS -->
     <script src="./js/axios@1.13.min.js"></script>
     <!-- LIBRERIA AXIOS -->
@@ -13,7 +14,6 @@
     <script defer src="./js/script.js"></script>
     <!-- SCRIPT PER GRAFICA -->
      <script defer src="./js/graphics.js"></script>
-    <title>Random User</title>
   </head>
   <body class="bg">
     <div id="wrapper">
@@ -22,12 +22,12 @@
         <div>Generatore gratutito di utenti</div>
       </header>
 
-      <div id="modalImpostazioni" class="modal">
+      <div id="modalImpostazioni" class="mymodal">
         <p><button id="chiudiImpostazioni">X</button></p>
-        <div class="modalHeader">
+        <div class="mymodalHeader">
           <h1>IMPOSTAZIONI DI GENERAZIONE</h1>
         </div>
-        <div class="modalContent">
+        <div class="mymodalContent">
             <div style="font-size: 18pt; font-weight: bold;">Numero Utenti</div>
             <div class="contenitoreSlider">
               <input type="range" min="1" max="100" value="20" id="rangePersone">
@@ -47,104 +47,108 @@
         </div>
       </div>
 
-      <div id="modalOrdinamenti" class="modal">
+      <div id="modalOrdinamenti" class="mymodal">
         <p><button id="chiudiImpostazioni">X</button></p>
-        <div class="modalHeader">
+        <div class="mymodalHeader">
           <h1>Ordinamenti</h1>
         </div>
-        <div class="modalContent">
+        <div class="mymodalContent">
           <div id="contenitoreNazioni">
             <div class="divNazioni">
               <img src="./img/bandiere/australia.png" alt="">
-              <label for=""><input type="checkbox" name="chkNazioni" value="au"></label>
+              <label for=""><input type="checkbox" name="chkNazioni" value="AU"></label>
             </div>
             <div class="divNazioni">
               <img src="./img/bandiere/brasile.webp" alt="">
-              <label for=""><input type="checkbox" name="chkNazioni" value="br"></label>
+              <label for=""><input type="checkbox" name="chkNazioni" value="BR"></label>
             </div>
             <div class="divNazioni">
               <img src="./img/bandiere/canada.webp" alt="">
-              <label for=""><input type="checkbox" name="chkNazioni" value="ca"></label>
+              <label for=""><input type="checkbox" name="chkNazioni" value="CA"></label>
             </div>
             <div class="divNazioni">
               <img src="./img/bandiere/danimarca.png" alt="">
-              <label for=""><input type="checkbox" name="chkNazioni" value="dk"></label>
+              <label for=""><input type="checkbox" name="chkNazioni" value="DK"></label>
             </div>
             <div class="divNazioni">
               <img src="./img/bandiere/finalandia.svg" alt="">
-              <label for=""><input type="checkbox" name="chkNazioni" value="fi"></label>
+              <label for=""><input type="checkbox" name="chkNazioni" value="FI"></label>
             </div>
             <div class="divNazioni">
               <img src="./img/bandiere/germania.png" alt="">
-              <label for=""><input type="checkbox" name="chkNazioni" value="de"></label>
+              <label for=""><input type="checkbox" name="chkNazioni" value="DE"></label>
             </div>
             <div class="divNazioni">
               <img src="./img/bandiere/india.png" alt="">
-              <label for=""><input type="checkbox" name="chkNazioni" value="in"></label>
+              <label for=""><input type="checkbox" name="chkNazioni" value="IN"></label>
             </div>
             <div class="divNazioni">
               <img src="./img/bandiere/iran.svg" alt="">
-              <label for=""><input type="checkbox" name="chkNazioni" value="ir"></label>
+              <label for=""><input type="checkbox" name="chkNazioni" value="IR"></label>
             </div>
             <div class="divNazioni">
               <img src="./img/bandiere/irlanda.svg" alt="">
-              <label for=""><input type="checkbox" name="chkNazioni" value="ie"></label>
+              <label for=""><input type="checkbox" name="chkNazioni" value="IE"></label>
             </div>
             <div class="divNazioni">
               <img src="./img/bandiere/messico.png" alt="">
-              <label for=""><input type="checkbox" name="chkNazioni" value="mx"></label>
+              <label for=""><input type="checkbox" name="chkNazioni" value="MX"></label>
             </div>
             <div class="divNazioni">
               <img src="./img/bandiere/novergia.png" alt="">
-              <label for=""><input type="checkbox" name="chkNazioni" value="no"></label>
+              <label for=""><input type="checkbox" name="chkNazioni" value="NO"></label>
             </div>
             <div class="divNazioni">
               <img src="./img/bandiere/nuovaZelanda.png" alt="">
-              <label for=""><input type="checkbox" name="chkNazioni" value="au"></label>
+              <label for=""><input type="checkbox" name="chkNazioni" value="NZ"></label>
             </div>
             <div class="divNazioni">
               <img src="./img/bandiere/olanda.svg" alt="">
-              <label for=""><input type="checkbox" name="chkNazioni" value="nl"></label>
+              <label for=""><input type="checkbox" name="chkNazioni" value="NL"></label>
             </div>
             <div class="divNazioni">
               <img src="./img/bandiere/regnoUnito.svg" alt="">
-              <label for=""><input type="checkbox" name="chkNazioni" value="gb"></label>
+              <label for=""><input type="checkbox" name="chkNazioni" value="BG"></label>
             </div>
             <div class="divNazioni">
               <img src="./img/bandiere/serbia.png" alt="">
-              <label for=""><input type="checkbox" name="chkNazioni" value="rs"></label>
+              <label for=""><input type="checkbox" name="chkNazioni" value="RS"></label>
             </div>
             <div class="divNazioni">
               <img src="./img/bandiere/spagna.svg" alt="">
-              <label for=""><input type="checkbox" name="chkNazioni" value="es"></label>
+              <label for=""><input type="checkbox" name="chkNazioni" value="ES"></label>
             </div>
             <div class="divNazioni">
               <img src="./img/bandiere/svizzera.png" alt="">
-              <label for=""><input type="checkbox" name="chkNazioni" value="ch"></label>
+              <label for=""><input type="checkbox" name="chkNazioni" value="CH"></label>
             </div>
             <div class="divNazioni">
               <img src="./img/bandiere/turchia.webp" alt="">
-              <label for=""><input type="checkbox" name="chkNazioni" value="tr"></label>
+              <label for=""><input type="checkbox" name="chkNazioni" value="TR"></label>
             </div>
             <div class="divNazioni">
               <img src="./img/bandiere/ucraina.png" alt="">
-              <label for=""><input type="checkbox" name="chkNazioni" value="ua"></label>
+              <label for=""><input type="checkbox" name="chkNazioni" value="UA"></label>
             </div>
             <div class="divNazioni">
               <img src="./img/bandiere/usa.png" alt="">
-              <label for=""><input type="checkbox" name="chkNazioni" value="us"></label>
+              <label for=""><input type="checkbox" name="chkNazioni" value="US"></label>
             </div>
           </div>
-          <div>
-            <select  id="cmbOrdinamneti">
-              <option value="">NOME ORDINE CRESCENTE</option>
-              <option value="">NOME ORDINE DECRESCENTE</option>
-              <option value="">COGNOME ORDINE CRESCENTE</option>
-              <option value="">COGNOME ORDINE DECRESCENTE</option>
+          <div id="contenitoreSelect">
+            <div style="display: inline-block; font-size: 16pt;">Ordina per</div>
+            <select  id="cmbOrdinamneti" class="">
+              <option value="">Nome</option>
+              <option value="">Cognome</option>
             </select>
+            <div style="margin-bottom: 20px;">
+              <label for="" style="font-size: 16pt; margin: 10px;">Crescente<input type="radio" name="tipoOrd" value="crescente" style="margin-left: 10px;" checked></label>
+              <label for="" style="font-size: 16pt; margin: 10px;">Decrescente<input type="radio" name="tipoOrd" value="decrescente" style="margin-left: 10px;"></label>
+            </div>
+            
           </div>
             <button id="pulisciNazioni">Clear all</button>
-
+            <button id="btnOrdina">Ordina</button>
         </div> 
       </div>
 
@@ -154,30 +158,31 @@
       </div>
 
       <div id="main">
-        <!-- <div class="card">
-          <img src="./neikGiovane.png">
-          <div>neik the gyat</div>
-        </div>
-
-        <div class="card">
-          <img src="./neikGiovane.png">
-          <div>neik the gyat</div>
-        </div>
-
-        <div class="card">
-          <img src="./neikGiovane.png">
-          <div>neik the gyat</div>
-        </div>
-
-        <div class="card">
-          <img src="./neikGiovane.png">
-          <div>neik the gyat</div>
-        </div>
+        <div id="visualizzatoreMultiplo">
+          <div class="card">
+            <div class="card-front">
+              <img src="https://randomuser.me/api/portraits/men/51.jpg" alt="" >
+              <div>Nicolò Gatto</div>
+            </div>
+          </div>
+          <div class="card">
+            <img src="https://randomuser.me/api/portraits/men/51.jpg" alt="">
+            <div>Nicolò Gatto</div>
+          </div>
+          <div class="card">
+            <img src="https://randomuser.me/api/portraits/men/51.jpg" alt="">
+            <div>Nicolò Gatto</div>
+          </div>
+          <div class="card">
+            <img src="https://randomuser.me/api/portraits/men/51.jpg" alt="">
+            <div>Nicolò Gatto</div>
+          </div>
+        </div>  	
         
-        <div class="card">
-          <img src="./neikGiovane.png">
-          <div>neik the gyat</div> -->
+        <div id="visualizzatoreSingolo">
+
         </div>
+      </div>
         
     </div>
   </body>

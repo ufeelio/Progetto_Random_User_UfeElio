@@ -1,0 +1,45 @@
+.card {
+    display: inline-block;
+    width: 45%;
+    font-size: 18pt;
+    height: auto;
+    border-radius: 10px;
+    margin: 10px;
+    background-color: rgb(146, 241, 241);
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.card-front div {
+    display: inline-block;
+    width: 50%;
+    height: 30%;
+    font-size: 18pt;
+    font-weight: bold;
+    color: rgb(3, 32, 94);
+}
+
+.card-back {
+    text-align: left;
+    font-size: 14pt;
+    font-weight: bold;
+}
+.card-back div {
+    margin: 5px;
+}
+.card img{
+    vertical-align: middle;
+    width: 30%;
+    height: auto;
+    border-radius: 50%;
+    margin: 20px;
+}
+
+#visualizzatoreMultiplo {
+    padding: 10px;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
