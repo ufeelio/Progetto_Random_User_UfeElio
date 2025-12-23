@@ -1,6 +1,6 @@
 "use strict";
 
-
+//  getPeople(20, "male")
 
 function getPeople(numberOfPeople, gender) {
   let promise = ajax.sendRequest("GET", `/api/?results=${numberOfPeople}&gender=${gender}`);
