@@ -8,25 +8,11 @@
     background-color: rgb(146, 241, 241);
     box-sizing: border-box;
     padding: 10px;
-}
-
-.card-front div {
-    display: inline-block;
-    width: 50%;
-    height: 30%;
     font-size: 18pt;
     font-weight: bold;
     color: rgb(3, 32, 94);
 }
 
-.card-back {
-    text-align: left;
-    font-size: 14pt;
-    font-weight: bold;
-}
-.card-back div {
-    margin: 5px;
-}
 .card img{
     vertical-align: middle;
     width: 30%;
@@ -43,3 +29,28 @@
     flex-wrap: wrap;
     flex-direction: row;
 }
+
+#modalCard {
+    /* display: none; */
+    background-color: pink;
+    background-color: rgb(70, 247, 247);
+}
+
+.mymodalHeaderCard {
+  text-align: center;
+  margin: 10px auto;
+
+}
+
+.mymodalHeaderCard img {
+    border-radius: 10px;
+    
+}
+.mymodalContentCard {
+  margin: 0 auto;
+  padding: 20px;
+  width: 80%;
+  border: 1px solid black; 
+  margin-top: 20px;
+}
+
