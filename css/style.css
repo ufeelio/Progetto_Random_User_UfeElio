@@ -70,12 +70,19 @@ header div {
   border-radius: 20px;
   color: #0d4258;
   background-color: rgb(131, 194, 223);
-  border: none ;
   margin: 20px;
+}
+
+#btnsWrapper button:hover {
+  cursor: pointer;
 }
 
 #modalImpostazioni {
   display: none;
+}
+
+.btnChiudi:hover {
+   cursor: pointer;
 }
 
 #modalOrdinamenti {
@@ -93,7 +100,7 @@ header div {
   height: 65%;
   overflow: auto;
   border-radius: 20px;
-  background-color: rgb(150, 219, 219);;
+  background-color: rgb(150, 219, 219);
 }
 
 .mymodalHeader {
@@ -117,7 +124,7 @@ header div {
   width: 30px;
   height: 30px;
   background-color: red;
-  border: none;
+  border: 0px;
   border-radius: 4px;
   color: #fff;
 }
@@ -193,6 +200,7 @@ header div {
   color: #16546e;
   border: none;
   font-size: 18pt;
+  margin: 10px;
 }
 
 .divNazioni {

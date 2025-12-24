@@ -31,12 +31,12 @@
 }
 
 #modalCard {
-    /* display: none; */
+   display: none;
     background-color: pink;
     background-color: rgb(70, 247, 247);
 }
 
-.mymodalHeaderCard {
+.mymodalHeaderCard{
   text-align: center;
   margin: 10px auto;
 
