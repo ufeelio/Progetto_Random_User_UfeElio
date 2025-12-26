@@ -1,72 +1,25 @@
 "use strict";
-let currentModal;
-let genereSelezionato;
-
+//#region Pulsanti impostazioni e Ordinamenti
 $("#btnImpostazioni").click(function (e) {
-  if (currentModal && currentModal) {
-    $(currentModal).hide(300);
-  }
-
+  $("#bgScuro").show(300);
   $("#modalImpostazioni").show(300);
-  currentModal = document.getElementById("modalImpostazioni");
-  console.log(currentModal);
 });
 
 $("#chiudiImpostazioni").click(function () {
+  $("#bgScuro").hide(300);
   $("#modalImpostazioni").hide(300);
-  currentModal = null;
 });
 
 $("#btnOrdinamenti").click(function (e) {
-  if (currentModal) {
-    $(currentModal).hide(300);
-  }
+  $("#bgScuro").show(300);
   $("#modalOrdinamenti").show(300);
-  currentModal = document.getElementById("modalOrdinamenti");
 });
 
 $("#chiudiOrdinamenti").click(function () {
+  $("#bgScuro").hide(300);
   $("#modalOrdinamenti").hide(300);
-  currentModal = null;
 });
 
-let selectedDivGender;
-
-$("#contenitoreImmagini div").click(function () {
-    selectedDivGender.stop(true)
-      .css({
-        boxShadow: "none",
-      })
-      .animate(
-        {
-          width: "200px",
-          height: "50px",
-          borderWidth: "0px",
-          fontSize: "24pt",
-        },
-        200
-      );
-  genereSelezionato = $(this).attr("data-genere");
-  selectedDivGender = $(this)
-  console.log(genereSelezionato);
-  if (genereSelezionato == "male") {
-    $(this)
-      .stop(true)
-      .css({
-        borderColor: "#63a6c0ff",
-        borderStyle: "solid",
-        boxShadow: "0 0 12px 4px #09435aff",
-      })
-      .animate(
-        {
-          width: "110px",
-          height: "180px",
-          borderWidth: "3px",
-        },
-        200
-      );
-  }
-});
 $("#btnsWrapper button").hover(
   function () {
     $(this)
@@ -103,6 +56,60 @@ $("#btnsWrapper button").hover(
       );
   }
 );
+//#endregion
+
+//#region Moldal impostazioni contenuto
+let genereSelezionato = "male";
+$("#contenitoreImmagini div").hover(
+  function () {
+    // over
+    $(this).stop(true).animate({ width: "110px", height: "175px" }, 200);
+  },
+  function () {
+    // out
+    $(this).stop(true).animate({ width: "100px", height: "167px" }, 200);
+  }
+);
+
+$("#contenitoreImmagini div").click(function () {
+  genereSelezionato = $(this).attr("data-genere");
+  console.log(genereSelezionato);
+  $("#contenitoreImmagini div").removeClass("selectedGender");
+  $(this).addClass("selectedGender");
+});
+
+$("#rangePersone").on("input", function () {
+  $("#valuePersone").text($(this).val());
+});
+
+$("#btnGenera").hover(
+  function () {
+    $(this)
+      .css({
+        borderColor: "#015170ff",
+        borderStyle: "solid",
+        borderWidth: "3px",
+        boxShadow: "0 0 12px 4px #61a4beff",
+      })
+      .stop(true)
+      .animate({ fontSize: "20pt" }, 200);
+  },
+  function () {
+    $(this).css({
+        boxShadow: "none",
+        borderWidth: "0px"
+      }).stop(true).animate({ fontSize: "18pt" }, 200);
+  }
+);
+
+$("#btnGenera").click(function () {  
+  getPeople($("#rangePersone").val(), genereSelezionato)
+  $("#bgScuro").hide(300);
+  $("#modalImpostazioni").hide(300);
+
+}) 
+
+//#endregion
 
 $(".btnChiudi").hover(
   function () {
