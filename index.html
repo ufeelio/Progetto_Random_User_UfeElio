@@ -277,7 +277,7 @@
       <div id="modalCard" class="mymodal">
         <p><button id="chiudiCard" class="btnChiudi">X</button></p>
         <div class="mymodalHeaderCard">
-          <img src="" alt="" />
+          <img src="" alt="" id="imgPerson"/>
         </div>
         <div class="mymodalContentCard">
           <label for="txtNome"> Nome </label>
@@ -289,7 +289,7 @@
           <label for="txtData"> Iscrizione </label>
           <input readonly class="txt" type="text" value="" id="txtData" />
 
-          <label for="txtIndirizzo"> Indirizzo </label>
+          <label for="txtIndirizzo"> Nazione </label>
           <input readonly class="txt" type="text" value="" id="txtIndirizzo" />
 
           <label for="txtTelefono"> Telefono </label>
@@ -316,25 +316,10 @@
       </div>
       <div id="main">
         <div id="visualizzatoreMultiplo">
-          <div class="card">
-            <img src="https://randomuser.me/api/portraits/men/51.jpg" alt="" />
-            <div>Nicolò Gatto</div>
-          </div>
-          <div class="card">
-            <img src="https://randomuser.me/api/portraits/men/51.jpg" alt="" />
-            <div>Nicolò Gatto</div>
-          </div><div class="card">
-            <img src="https://randomuser.me/api/portraits/men/51.jpg" alt="" />
-            <div>Nicolò Gatto</div>
-          </div><div class="card">
-            <img src="https://randomuser.me/api/portraits/men/51.jpg" alt="" />
-            <div>Nicolò Gatto</div>
-          </div>
-          
         </div>
         
       </div>
-      <div style="margin: 20px; font-size: 18pt; color: white;">1/4</div>
+      <div style="margin: 20px; font-size: 18pt; color: white;" id="pages">1/4</div>
       <div id="navButtons">
           <span id="previous">⬅️</span>
           <span id="next">➡️</span>

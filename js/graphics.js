@@ -1,6 +1,6 @@
 "use strict";
 //#region Pulsanti impostazioni e Ordinamenti
-$("#btnImpostazioni").click(function (e) {
+$("#btnImpostazioni").click(function () {
   $("#bgScuro").show(300);
   $("#modalImpostazioni").show(300);
 });
@@ -60,6 +60,7 @@ $("#btnsWrapper button").hover(
 
 //#region Moldal impostazioni contenuto
 $("#btnGenera").click(function () {
+  currentPage = 0;
   getPeople($("#rangePersone").val(), genereSelezionato);
   $("#bgScuro").hide(300);
   $("#modalImpostazioni").hide(300);
@@ -206,60 +207,41 @@ $("#btnOrdina").click(function () {
     listaNazioni.push($(this).attr("data-nazione").toLowerCase());
   });
 
-  let result = [];
+  let risultato;
 
-  if (listaNazioni.length !== 0) {
+  if (listaNazioni.length > 0) {
     if ($("#chkNome").prop("checked") && $("#chkCognome").prop("checked")) {
       if ($("#rdbCre").prop("checked")) {
-        result = filtroNazioniNomeCognomeCrescente(listaNazioni);
-      } else if ($("#rdbDecr").prop("checked")) {
-        result = filtroNazioniNomeCognomeDecrescente(listaNazioni);
+        risultato = filtroNazioniNomeCognomeCrescente(listaNazioni);
+      } else {
+        risultato = filtroNazioniNomeCognomeDecrescente(listaNazioni);
       }
     } else if ($("#chkNome").prop("checked")) {
       if ($("#rdbCre").prop("checked")) {
-        result = filtroNazioniNomeCrescente(listaNazioni);
-      } else if ($("#rdbDecr").prop("checked")) {
-        result = filtroNazioniNomeDecrescente(listaNazioni);
+        risultato = filtroNazioniNomeCrescente(listaNazioni);
+      } else {
+        risultato = filtroNazioniNomeDecrescente(listaNazioni);
       }
     } else if ($("#chkCognome").prop("checked")) {
       if ($("#rdbCre").prop("checked")) {
-        result = filtroNazioniCognomeCrescente(listaNazioni);
-      } else if ($("#rdbDecr").prop("checked")) {
-        result = filtroNazioniCognomeDecrescente(listaNazioni);
+        risultato = filtroNazioniCognomeCrescente(listaNazioni);
+      } else {
+        risultato = filtroNazioniCognomeDecrescente(listaNazioni);
       }
     } else {
       if ($("#rdbCre").prop("checked")) {
-        result = filtroNazioniCrescente(listaNazioni);
-      } else if ($("#rdbDecr").prop("checked")) {
-        result = filtroNazioniDecrescente(listaNazioni);
+        risultato = filtroNazioniCrescente(listaNazioni);
+      } else {
+        risultato = filtroNazioniDecrescente(listaNazioni);
       }
-    }
-  } else {
-    if ($("#chkNome").prop("checked") && $("#chkCognome").prop("checked")) {
-      if ($("#rdbCre").prop("checked")) {
-        result = nomiCognomiCrescente();
-      } else if ($("#rdbDecr").prop("checked")) {
-        result = nomiCognomiDecrescente();
-      }
-    } else if ($("#chkNome").prop("checked")) {
-      if ($("#rdbCre").prop("checked")) {
-        result = nomeCrescente();
-      } else if ($("#rdbDecr").prop("checked")) {
-        result = nomeDecrescente();
-      }
-    } else if ($("#chkCognome").prop("checked")) {
-      if ($("#rdbCre").prop("checked")) {
-        result = cognomeCrescente();
-      } else if ($("#rdbDecr").prop("checked")) {
-        result = cognomeDecrescente();
-      }
-    } else {
-      result = people;
     }
   }
 
-  pulisci();
+  console.log(risultato);
+  if (risultato.length != 0) currentArray = risultato;
 
+  currentPage = 0;
+  showPeople(currentArray);
   $("#bgScuro").hide(300);
   $("#modalOrdinamenti").hide(300);
 });
@@ -274,6 +256,10 @@ $("#chkNome, #chkCognome").click(function () {
 
 $("#pulisciNazioni").click(function () {
   pulisci();
+  currentArray = people;
+  showPeople(currentArray);
+  $("#bgScuro").hide(300);
+  $("#modalOrdinamenti").hide(300);
 });
 
 function pulisci() {
@@ -326,13 +312,15 @@ $(".btnChiudi").hover(
 );
 
 //#region Main
-$("#navButtons span").hover(function () {
+$("#navButtons span").hover(
+  function () {
     // over
-    $(this).stop(true).animate({fontSize: "34pt"}, 200)
-  }, function () {
+    $(this).stop(true).animate({ fontSize: "34pt" }, 200);
+  },
+  function () {
     // out
-    $(this).stop(true).animate({fontSize: "30pt"}, 200)
-
+    $(this).stop(true).animate({ fontSize: "30pt" }, 200);
   }
 );
+
 //#endregion
