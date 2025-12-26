@@ -59,6 +59,12 @@ $("#btnsWrapper button").hover(
 //#endregion
 
 //#region Moldal impostazioni contenuto
+$("#btnGenera").click(function () {
+  getPeople($("#rangePersone").val(), genereSelezionato);
+  $("#bgScuro").hide(300);
+  $("#modalImpostazioni").hide(300);
+});
+
 let genereSelezionato = "male";
 $("#contenitoreImmagini div").hover(
   function () {
@@ -74,17 +80,18 @@ $("#contenitoreImmagini div").hover(
 $("#contenitoreImmagini div").click(function () {
   genereSelezionato = $(this).attr("data-genere");
   console.log(genereSelezionato);
-  if(genereSelezionato == "male")
-  {
-    $(this).css({borderColor: "#61a4beff", boxShadow: "rgb(34, 108, 138)"})
-  }
-  else if (genereSelezionato == "female")
-  {
-    $(this).css({borderColor: "#be61aaff", boxShadow: "rgba(138, 34, 115, 1)"})
-  }
-  else
-  {
-    $(this).css({borderColor: "#7261beff", boxShadow: "rgba(74, 34, 138, 1)"})
+  if (genereSelezionato == "male") {
+    $(this).css({ borderColor: "#61a4beff", boxShadow: "rgb(34, 108, 138)" });
+  } else if (genereSelezionato == "female") {
+    $(this).css({
+      borderColor: "#be61aaff",
+      boxShadow: "rgba(138, 34, 115, 1)",
+    });
+  } else {
+    $(this).css({
+      borderColor: "#7261beff",
+      boxShadow: "rgba(74, 34, 138, 1)",
+    });
   }
   $("#contenitoreImmagini div").removeClass("selectedGender");
   $(this).addClass("selectedGender");
@@ -107,20 +114,194 @@ $("#btnGenera").hover(
       .animate({ fontSize: "20pt" }, 200);
   },
   function () {
-    $(this).css({
+    $(this)
+      .css({
         boxShadow: "none",
-        borderWidth: "0px"
-      }).stop(true).animate({ fontSize: "18pt" }, 200);
+        borderWidth: "0px",
+      })
+      .stop(true)
+      .animate({ fontSize: "18pt" }, 200);
+  }
+);
+//#endregion
+
+//#region Modal ordinamenti
+$("#pulisciNazioni").hover(
+  function () {
+    $(this)
+      .css({
+        borderColor: "#015170ff",
+        borderStyle: "solid",
+        borderWidth: "3px",
+        boxShadow: "0 0 12px 4px #61a4beff",
+      })
+      .stop(true)
+      .animate({ width: "80px", fontSize: "14pt" }, 200);
+  },
+  function () {
+    $(this)
+      .css({
+        boxShadow: "none",
+        borderWidth: "0px",
+      })
+      .stop(true)
+      .animate({ width: "70px", fontSize: "12pt" }, 200);
   }
 );
 
-$("#btnGenera").click(function () {  
-  getPeople($("#rangePersone").val(), genereSelezionato)
+$("#btnAltri").hover(
+  function () {
+    $(this)
+      .css({
+        borderColor: "#015170ff",
+        borderStyle: "solid",
+        borderWidth: "3px",
+        boxShadow: "0 0 12px 4px #61a4beff",
+      })
+      .stop(true)
+      .animate({ width: "80px", fontSize: "14pt" }, 200);
+  },
+  function () {
+    $(this)
+      .css({
+        boxShadow: "none",
+        borderWidth: "0px",
+      })
+      .stop(true)
+      .animate({ width: "70px", fontSize: "12pt" }, 200);
+  }
+);
+
+$("#btnAltri").click(function () {
+  $("#contenitoreSelect").toggle(200);
+});
+
+$("#btnOrdina").hover(
+  function () {
+    $(this)
+      .css({
+        borderColor: "#015170ff",
+        borderStyle: "solid",
+        borderWidth: "3px",
+        boxShadow: "0 0 12px 4px #61a4beff",
+      })
+      .stop(true)
+      .animate({ width: "80px", fontSize: "14pt" }, 200);
+  },
+  function () {
+    $(this)
+      .css({
+        boxShadow: "none",
+        borderWidth: "0px",
+      })
+      .stop(true)
+      .animate({ width: "70px", fontSize: "12pt" }, 200);
+  }
+);
+
+$("#btnOrdina").click(function () {
+  let listaNazioni = [];
+
+  $(".divNazioni img[data-selected=true]").each(function () {
+    listaNazioni.push($(this).attr("data-nazione").toLowerCase());
+  });
+
+  let result = [];
+
+  if (listaNazioni.length !== 0) {
+    if ($("#chkNome").prop("checked") && $("#chkCognome").prop("checked")) {
+      if ($("#rdbCre").prop("checked")) {
+        result = filtroNazioniNomeCognomeCrescente(listaNazioni);
+      } else if ($("#rdbDecr").prop("checked")) {
+        result = filtroNazioniNomeCognomeDecrescente(listaNazioni);
+      }
+    } else if ($("#chkNome").prop("checked")) {
+      if ($("#rdbCre").prop("checked")) {
+        result = filtroNazioniNomeCrescente(listaNazioni);
+      } else if ($("#rdbDecr").prop("checked")) {
+        result = filtroNazioniNomeDecrescente(listaNazioni);
+      }
+    } else if ($("#chkCognome").prop("checked")) {
+      if ($("#rdbCre").prop("checked")) {
+        result = filtroNazioniCognomeCrescente(listaNazioni);
+      } else if ($("#rdbDecr").prop("checked")) {
+        result = filtroNazioniCognomeDecrescente(listaNazioni);
+      }
+    } else {
+      if ($("#rdbCre").prop("checked")) {
+        result = filtroNazioniCrescente(listaNazioni);
+      } else if ($("#rdbDecr").prop("checked")) {
+        result = filtroNazioniDecrescente(listaNazioni);
+      }
+    }
+  } else {
+    if ($("#chkNome").prop("checked") && $("#chkCognome").prop("checked")) {
+      if ($("#rdbCre").prop("checked")) {
+        result = nomiCognomiCrescente();
+      } else if ($("#rdbDecr").prop("checked")) {
+        result = nomiCognomiDecrescente();
+      }
+    } else if ($("#chkNome").prop("checked")) {
+      if ($("#rdbCre").prop("checked")) {
+        result = nomeCrescente();
+      } else if ($("#rdbDecr").prop("checked")) {
+        result = nomeDecrescente();
+      }
+    } else if ($("#chkCognome").prop("checked")) {
+      if ($("#rdbCre").prop("checked")) {
+        result = cognomeCrescente();
+      } else if ($("#rdbDecr").prop("checked")) {
+        result = cognomeDecrescente();
+      }
+    } else {
+      result = people;
+    }
+  }
+
+  pulisci();
+
   $("#bgScuro").hide(300);
-  $("#modalImpostazioni").hide(300);
+  $("#modalOrdinamenti").hide(300);
+});
 
-}) 
+let rdbCreChecked = false;
+$("#chkNome, #chkCognome").click(function () {
+  if (!rdbCreChecked) {
+    $("#rdbCre").prop("checked", true);
+    rdbCreChecked = true;
+  }
+});
 
+$("#pulisciNazioni").click(function () {
+  pulisci();
+});
+
+function pulisci() {
+  rdbCreChecked = false;
+  $("#contenitoreNazioni img").each(function (index, img) {
+    $(img).attr("data-selected", "false");
+    $(img).removeClass(`nazione-${$(img).attr("data-nazione")}`);
+  });
+
+  $("#contenitoreSelect input").prop("checked", false);
+}
+
+$(".divNazioni img").hover(
+  function () {
+    // over
+    $(this).stop(true).animate({ width: "68px", height: "45px" }, 200);
+  },
+  function () {
+    // out
+    $(this).stop(true).animate({ width: "65px", height: "40px" }, 200);
+  }
+);
+
+$(".divNazioni img").click(function () {
+  $(this).toggleClass(`nazione-${$(this).attr("data-nazione")}`);
+  let valore = $(this).attr("data-selected") == "true" ? "false" : "true";
+  $(this).attr("data-selected", valore);
+});
 //#endregion
 
 $(".btnChiudi").hover(
@@ -143,3 +324,15 @@ $(".btnChiudi").hover(
     );
   }
 );
+
+//#region Main
+$("#navButtons span").hover(function () {
+    // over
+    $(this).stop(true).animate({fontSize: "34pt"}, 200)
+  }, function () {
+    // out
+    $(this).stop(true).animate({fontSize: "30pt"}, 200)
+
+  }
+);
+//#endregion

@@ -1,56 +1,60 @@
 .card {
-    display: inline-block;
-    width: 45%;
-    font-size: 18pt;
-    height: auto;
-    border-radius: 10px;
-    margin: 10px;
-    background-color: rgb(146, 241, 241);
-    box-sizing: border-box;
-    padding: 10px;
-    font-size: 18pt;
-    font-weight: bold;
-    color: rgb(3, 32, 94);
+  display: inline-block;
+  width: 45%;
+  font-size: 18pt;
+  height: auto;
+  border-radius: 10px;
+  margin: 10px;
+  box-sizing: border-box;
+  padding: 10px;
+  font-size: 18pt;
+  font-weight: bold;
+  color: rgb(3, 32, 94);
 }
 
-.card img{
-    vertical-align: middle;
-    width: 30%;
-    height: auto;
-    border-radius: 50%;
-    margin: 20px;
+.card img {
+  vertical-align: middle;
+  width: 30%;
+  height: auto;
+  border-radius: 50%;
+  margin: 20px;
 }
 
 #visualizzatoreMultiplo {
-    padding: 10px;
-    width: 80%;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    flex-direction: row;
+  padding: 10px;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
 }
 
 #modalCard {
-   display: none;
-    background-color: pink;
-    background-color: rgb(70, 247, 247);
+  display: none;
 }
 
-.mymodalHeaderCard{
+.maschio {
+  background-color: rgb(70, 247, 247);
+}
+
+.femmina {
+  background-color: pink;
+}
+
+.mymodalHeaderCard {
   text-align: center;
   margin: 10px auto;
-
 }
 
 .mymodalHeaderCard img {
-    border-radius: 10px;
+  border-radius: 10px;
 }
 .mymodalContentCard {
   display: grid;
   margin: 0 auto;
   padding: 20px;
   width: 80%;
-  border: 3px solid rgb(19, 48, 145); 
+  border: 3px solid rgb(19, 48, 145);
   margin-top: 20px;
   grid-template-columns: 50% 50%;
   grid-template-rows: auto;
@@ -59,18 +63,16 @@
 }
 
 .mymodalContentCard .txt {
-    height: 30px;
-    border-radius: 7px;
-    padding-left: 5px;
-    font-size: 14pt;
-    border: none;
+  height: 30px;
+  border-radius: 7px;
+  padding-left: 5px;
+  font-size: 14pt;
+  border: none;
 }
 
 .mymodalContentCard label {
-    font-size: 14pt;
-    text-align: left;
-    color: rgb(19, 48, 145);
-    font-weight: bold;
-
+  font-size: 14pt;
+  text-align: left;
+  color: rgb(19, 48, 145);
+  font-weight: bold;
 }
-

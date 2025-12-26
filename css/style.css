@@ -225,13 +225,17 @@ header div {
 .divNazioni {
   display: inline-block;
   /* border: 2px solid #0b4b66; */
-  margin: 5px;
+  margin: 10px;
 }
 
 .divNazioni img {
   width: 65px;
   height: 40px;
   border-radius: 4px;
+  box-sizing: border-box;
+}
+.divNazioni img:hover {
+  cursor: pointer;
 }
 
 .divNazioni input {
@@ -265,8 +269,26 @@ header div {
   background-color: #6dc0da;
   font-weight: bold;
   color: #16546e;
-  border: none;
   font-size: 12pt;
+  border-width: 0px;
+}
+#pulisciNazioni:hover {
+  cursor: pointer;
+}
+
+#btnAltri {
+  width: 70px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #6dc0da;
+  font-weight: bold;
+  color: #16546e;
+  font-size: 12pt;
+  border-width: 0px;
+}
+
+#btnAltri:hover {
+  cursor: pointer;
 }
 
 #btnOrdina {
@@ -278,6 +300,10 @@ header div {
   color: #16546e;
   border: none;
   font-size: 12pt;
+}
+
+#btnOrdina:hover {
+  cursor: pointer;
 }
 
 #cmbOrdinamneti {
@@ -294,10 +320,11 @@ header div {
   text-align: center;
 }
 
-#contenitoreSelect input {
+#contenitoreSelect input:hover {
+  cursor: pointer;
 }
 
-#contenitoreSelect input {
+#contenitoreSelect input[type="radio"] {
   -webkit-appearance: none;
   appearance: none;
   width: 15px;
@@ -310,7 +337,27 @@ header div {
   transition: opacity 0.2s;
 }
 
+#contenitoreSelect input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 2px;
+  background: #ffffff;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+
 #contenitoreSelect input[type="radio"]:checked {
+  width: 15px;
+  height: 15px;
+  background: #046583;
+  cursor: pointer;
+}
+
+#contenitoreSelect input[type="checkbox"]:checked {
   width: 15px;
   height: 15px;
   background: #046583;
@@ -333,4 +380,22 @@ header div {
   100% {
     background-position: 0% 50%;
   }
+}
+
+
+#searchBar {
+  font-size: 24px;
+  border-radius: 15px;
+  padding: 5px 10px;
+  border: none;
+}
+#navButtons {
+  margin: 20px;
+}
+#navButtons span{
+  font-size: 30pt;
+}
+
+#navButtons span:hover {
+  cursor: pointer;
 }

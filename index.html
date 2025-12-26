@@ -6,6 +6,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/card.css" />
+    <link rel="stylesheet" href="./css/nazioni.css" />
     <!-- AXIOS -->
     <script src="./js/axios@1.13.min.js"></script>
     <!-- LIBRERIA AXIOS -->
@@ -14,6 +15,8 @@
     <script defer src="./js/script.js"></script>
     <!-- SCRIPT PER GRAFICA -->
     <script defer src="./js/graphics.js"></script>
+    <!-- SCRIPT PER ORDINAMENTI -->
+    <script defer src="./js/ordinamenti.js"></script>
     <!--  JQUERY -->
     <script
       src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -49,15 +52,22 @@
               max="100"
               value="20"
               id="rangePersone" />
-            <div style="margin-top: 10px; font-size: 18pt" id="valuePersone">20</div>
+            <div style="margin-top: 10px; font-size: 18pt" id="valuePersone">
+              20
+            </div>
           </div>
 
           <h1>Genere Utenti</h1>
 
           <div id="contenitoreImmagini">
             <div
-              style="background-image: url(./img/machio.png); border-color: #61a4beff; box-shadow: rgb(34, 108, 138);"
-              data-genere="male" class="selectedGender"></div>
+              style="
+                background-image: url(./img/machio.png);
+                border-color: #61a4beff;
+                box-shadow: rgb(34, 108, 138);
+              "
+              data-genere="male"
+              class="selectedGender"></div>
             <div
               style="background-image: url(./img/femmina.png)"
               data-genere="female"></div>
@@ -79,152 +89,188 @@
         <div class="mymodalContent">
           <div id="contenitoreNazioni">
             <div class="divNazioni">
-              <img src="./img/bandiere/australia.png" alt="" />
-              <label for=""
-                ><input type="checkbox" name="chkNazioni" value="AU"
-              /></label>
+              <img
+                src="./img/bandiere/australia.png"
+                alt=""
+                data-nazione="AU"
+                data-selected="false" />
             </div>
             <div class="divNazioni">
-              <img src="./img/bandiere/brasile.webp" alt="" />
-              <label for=""
-                ><input type="checkbox" name="chkNazioni" value="BR"
-              /></label>
+              <img
+                src="./img/bandiere/brasile.webp"
+                alt=""
+                data-nazione="BR"
+                data-selected="false" />
             </div>
             <div class="divNazioni">
-              <img src="./img/bandiere/canada.webp" alt="" />
-              <label for=""
-                ><input type="checkbox" name="chkNazioni" value="CA"
-              /></label>
+              <img
+                src="./img/bandiere/canada.webp"
+                alt=""
+                data-nazione="CA"
+                data-selected="false" />
             </div>
             <div class="divNazioni">
-              <img src="./img/bandiere/danimarca.png" alt="" />
-              <label for=""
-                ><input type="checkbox" name="chkNazioni" value="DK"
-              /></label>
+              <img
+                src="./img/bandiere/danimarca.png"
+                alt=""
+                data-nazione="DK"
+                data-selected="false" />
             </div>
             <div class="divNazioni">
-              <img src="./img/bandiere/finalandia.svg" alt="" />
-              <label for=""
-                ><input type="checkbox" name="chkNazioni" value="FI"
-              /></label>
+              <img
+                src="./img/bandiere/finalandia.svg"
+                alt=""
+                data-nazione="FI"
+                data-selected="false" />
             </div>
             <div class="divNazioni">
-              <img src="./img/bandiere/germania.png" alt="" />
-              <label for=""
-                ><input type="checkbox" name="chkNazioni" value="DE"
-              /></label>
+              <img
+                src="./img/bandiere/germania.png"
+                alt=""
+                data-nazione="DE"
+                data-selected="false" />
             </div>
             <div class="divNazioni">
-              <img src="./img/bandiere/india.png" alt="" />
-              <label for=""
-                ><input type="checkbox" name="chkNazioni" value="IN"
-              /></label>
+              <img
+                src="./img/bandiere/india.png"
+                alt=""
+                data-nazione="IN"
+                data-selected="false" />
             </div>
             <div class="divNazioni">
-              <img src="./img/bandiere/iran.svg" alt="" />
-              <label for=""
-                ><input type="checkbox" name="chkNazioni" value="IR"
-              /></label>
+              <img
+                src="./img/bandiere/iran.svg"
+                alt=""
+                data-nazione="IR"
+                data-selected="false" />
             </div>
             <div class="divNazioni">
-              <img src="./img/bandiere/irlanda.svg" alt="" />
-              <label for=""
-                ><input type="checkbox" name="chkNazioni" value="IE"
-              /></label>
+              <img
+                src="./img/bandiere/irlanda.svg"
+                alt=""
+                data-nazione="IE"
+                data-selected="false" />
             </div>
             <div class="divNazioni">
-              <img src="./img/bandiere/messico.png" alt="" />
-              <label for=""
-                ><input type="checkbox" name="chkNazioni" value="MX"
-              /></label>
+              <img
+                src="./img/bandiere/messico.png"
+                alt=""
+                data-nazione="MX"
+                data-selected="false" />
             </div>
             <div class="divNazioni">
-              <img src="./img/bandiere/novergia.png" alt="" />
-              <label for=""
-                ><input type="checkbox" name="chkNazioni" value="NO"
-              /></label>
+              <img
+                src="./img/bandiere/novergia.png"
+                alt=""
+                data-nazione="NO"
+                data-selected="false" />
             </div>
             <div class="divNazioni">
-              <img src="./img/bandiere/nuovaZelanda.png" alt="" />
-              <label for=""
-                ><input type="checkbox" name="chkNazioni" value="NZ"
-              /></label>
+              <img
+                src="./img/bandiere/nuovaZelanda.png"
+                alt=""
+                data-nazione="NZ"
+                data-selected="false" />
             </div>
             <div class="divNazioni">
-              <img src="./img/bandiere/olanda.svg" alt="" />
-              <label for=""
-                ><input type="checkbox" name="chkNazioni" value="NL"
-              /></label>
+              <img
+                src="./img/bandiere/olanda.png"
+                alt=""
+                data-nazione="NL"
+                data-selected="false" />
             </div>
             <div class="divNazioni">
-              <img src="./img/bandiere/regnoUnito.svg" alt="" />
-              <label for=""
-                ><input type="checkbox" name="chkNazioni" value="BG"
-              /></label>
+              <img
+                src="./img/bandiere/regnoUnito.svg"
+                alt=""
+                data-nazione="GB"
+                data-selected="false" />
             </div>
             <div class="divNazioni">
-              <img src="./img/bandiere/serbia.png" alt="" />
-              <label for=""
-                ><input type="checkbox" name="chkNazioni" value="RS"
-              /></label>
+              <img
+                src="./img/bandiere/serbia.png"
+                alt=""
+                data-nazione="RS"
+                data-selected="false" />
             </div>
             <div class="divNazioni">
-              <img src="./img/bandiere/spagna.svg" alt="" />
-              <label for=""
-                ><input type="checkbox" name="chkNazioni" value="ES"
-              /></label>
+              <img
+                src="./img/bandiere/spagna.svg"
+                alt=""
+                data-nazione="ES"
+                data-selected="false" />
             </div>
             <div class="divNazioni">
-              <img src="./img/bandiere/svizzera.png" alt="" />
-              <label for=""
-                ><input type="checkbox" name="chkNazioni" value="CH"
-              /></label>
+              <img
+                src="./img/bandiere/svizzera.png"
+                alt=""
+                data-nazione="CH"
+                data-selected="false" />
             </div>
             <div class="divNazioni">
-              <img src="./img/bandiere/turchia.webp" alt="" />
-              <label for=""
-                ><input type="checkbox" name="chkNazioni" value="TR"
-              /></label>
+              <img
+                src="./img/bandiere/turchia.webp"
+                alt=""
+                data-nazione="TR"
+                data-selected="false" />
             </div>
             <div class="divNazioni">
-              <img src="./img/bandiere/ucraina.png" alt="" />
-              <label for=""
-                ><input type="checkbox" name="chkNazioni" value="UA"
-              /></label>
+              <img
+                src="./img/bandiere/ucraina.png"
+                alt=""
+                data-nazione="UA"
+                data-selected="false" />
             </div>
             <div class="divNazioni">
-              <img src="./img/bandiere/usa.png" alt="" />
-              <label for=""
-                ><input type="checkbox" name="chkNazioni" value="US"
-              /></label>
+              <img
+                src="./img/bandiere/usa.png"
+                alt=""
+                data-nazione="US"
+                data-selected="false" />
             </div>
           </div>
-          <div id="contenitoreSelect">
+          <button id="btnAltri">Altro</button>
+          <div id="contenitoreSelect" style="display: none">
             <div style="display: inline-block; font-size: 16pt">Ordina per</div>
-            <select id="cmbOrdinamneti" class="">
-              <option value="">Nome</option>
-              <option value="">Cognome</option>
-            </select>
-            <div style="margin-bottom: 20px">
+            <div style="margin: 10px; display: inline-block">
+              <label for="" style="font-size: 16pt; margin: 10px"
+                >Nome<input
+                  type="checkbox"
+                  name="nome"
+                  value="nome"
+                  style="margin-left: 10px"
+               id="chkNome"/></label>
+              <label for="" style="font-size: 16pt; margin: 10px"
+                >Cognome<input
+                  type="checkbox"
+                  name="cognome"
+                  value="cognome"
+                  style="margin-left: 10px"
+              id="chkCognome"/></label>
+            </div>
+            <div style="display: inline-block; font-size: 16pt">In ordine</div>
+
+            <div style="margin: 10px; display: inline-block">
               <label for="" style="font-size: 16pt; margin: 10px"
                 >Crescente<input
                   type="radio"
                   name="tipoOrd"
                   value="crescente"
                   style="margin-left: 10px"
-                  checked
-              /></label>
+              id="rdbCre"/></label>
               <label for="" style="font-size: 16pt; margin: 10px"
                 >Decrescente<input
                   type="radio"
                   name="tipoOrd"
                   value="decrescente"
                   style="margin-left: 10px"
-              /></label>
+              id="rdbDecr"/></label>
             </div>
           </div>
-          <button id="pulisciNazioni">Clear all</button>
-          <button id="btnOrdina">Ordina</button>
+          <div style="margin: 10px;">
+            <button id="pulisciNazioni">Clear all</button>
+            <button id="btnOrdina">Ordina</button>
+          </div>
         </div>
       </div>
 
@@ -262,20 +308,43 @@
       </header>
 
       <div id="btnsWrapper">
-        <button id="btnImpostazioni">Impostazioni</button>
+        <button id="btnImpostazioni">Genera</button>
         <button id="btnOrdinamenti">Ordinamenti</button>
       </div>
-
+      <div style="margin-bottom: 80px;">
+        <input type="text" id="searchBar" placeholder="Cerca...">
+      </div>
       <div id="main">
         <div id="visualizzatoreMultiplo">
-          <!-- <div class="card">
+          <div class="card">
             <img src="https://randomuser.me/api/portraits/men/51.jpg" alt="" />
             <div>Nicolò Gatto</div>
-          </div> -->
+          </div>
+          <div class="card">
+            <img src="https://randomuser.me/api/portraits/men/51.jpg" alt="" />
+            <div>Nicolò Gatto</div>
+          </div><div class="card">
+            <img src="https://randomuser.me/api/portraits/men/51.jpg" alt="" />
+            <div>Nicolò Gatto</div>
+          </div><div class="card">
+            <img src="https://randomuser.me/api/portraits/men/51.jpg" alt="" />
+            <div>Nicolò Gatto</div>
+          </div>
+          
         </div>
-
-        <div id="visualizzatoreSingolo"></div>
+        
       </div>
+      <div style="margin: 20px; font-size: 18pt; color: white;">1/4</div>
+      <div id="navButtons">
+          <span id="previous">⬅️</span>
+          <span id="next">➡️</span>
+      </div>
+
+      <footer style="">
+      TUTTI I DIRITTI RISERVATI A ELIO UFE
+    </footer>
     </div>
+
+    
   </body>
 </html>
