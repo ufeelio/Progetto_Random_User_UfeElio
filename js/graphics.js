@@ -74,6 +74,18 @@ $("#contenitoreImmagini div").hover(
 $("#contenitoreImmagini div").click(function () {
   genereSelezionato = $(this).attr("data-genere");
   console.log(genereSelezionato);
+  if(genereSelezionato == "male")
+  {
+    $(this).css({borderColor: "#61a4beff", boxShadow: "rgb(34, 108, 138)"})
+  }
+  else if (genereSelezionato == "female")
+  {
+    $(this).css({borderColor: "#be61aaff", boxShadow: "rgba(138, 34, 115, 1)"})
+  }
+  else
+  {
+    $(this).css({borderColor: "#7261beff", boxShadow: "rgba(74, 34, 138, 1)"})
+  }
   $("#contenitoreImmagini div").removeClass("selectedGender");
   $(this).addClass("selectedGender");
 });

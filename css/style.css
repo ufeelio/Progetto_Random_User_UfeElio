@@ -203,8 +203,8 @@ header div {
 }
 
 .selectedGender {
-  box-shadow: 0 0 12px 4px #61a4beff;
-  border: solid 3px rgb(34, 108, 138);
+  box-shadow: 0 0 12px 4px ;
+  border: solid 3px ;
 }
 
 #btnGenera {
