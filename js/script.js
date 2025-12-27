@@ -1,14 +1,16 @@
 "use strict";
-let people;
+let people = [];
 let currentPage = 0;
-let currentArray;
-previous.addEventListener("click", previousClick)
-next.addEventListener("click", nextClick)
+let currentArray = [];
+let searchArray = [];
+previous.addEventListener("click", previousClick);
+next.addEventListener("click", nextClick);
 getPeople(20, "male");
 chiudiCard.addEventListener("click", function () {
   $("#bgScuro").hide(200);
   $("#modalCard").hide(200);
 });
+searchBar.addEventListener("input", cercaPersone);
 
 let min = 0;
 let max;
@@ -68,21 +70,28 @@ function showPeople(peopleList) {
     }
   );
 
-  changSpan(peopleList)
+  changSpan(peopleList);
 }
 
 function visualizzaDettagli(person) {
+  if (person.gender == "male") {
+    modalCard.classList.remove("femmina");
+    modalCard.classList.add("maschio");
+  } else {
+    modalCard.classList.remove("maschio");
+    modalCard.classList.add("femmina");
+  }
   console.log(person);
   $("#bgScuro").show(200);
   $("#modalCard").show(200);
 
-  imgPerson.src = `${person.picture.large}`
+  imgPerson.src = `${person.picture.large}`;
   txtNome.value = person.name.first + " " + person.name.last;
   txtEmail.value = person.email;
-  txtData.value = person.registered.date
-  txtIndirizzo.value = person.location.country
-  txtTelefono.value = person.phone
-  txtPassword.value = person.login.password
+  txtData.value = person.registered.date.substring(0, 10);
+  txtIndirizzo.value = person.location.country;
+  txtTelefono.value = person.phone;
+  txtPassword.value = person.login.password;
 }
 
 function creaTag(tagName, content) {
@@ -91,29 +100,56 @@ function creaTag(tagName, content) {
   return TAG;
 }
 
-function previousClick() { 
-  if(currentPage == 0) {
+function previousClick() {
+  if (currentPage == 0) {
     currentPage = max;
-  } 
-  else
-  {
+  } else {
     currentPage--;
   }
-  showPeople(currentArray)
+  if(searchBar.value == 0)
+  showPeople(currentArray);
+  else
+  showPeople(searchArray);
 }
 
-function nextClick() {  
-  if(currentPage == max) {
+function nextClick() {
+  if (currentPage == max) {
     currentPage = 0;
-  } 
-  else
-  {
+  } else {
     currentPage++;
   }
-  showPeople(currentArray)
+  if(searchBar.value == 0)
+  showPeople(currentArray);
+  else
+  showPeople(searchArray);
 }
 
-function changSpan(peopleList) {  
-  max = parseInt((peopleList.length-1) / 4)
-  pages.textContent = `${currentPage+1}/${max+1}`
+function changSpan(peopleList) {
+  max = parseInt((peopleList.length - 1) / 4);
+  pages.textContent = `${currentPage + 1}/${max + 1}`;
+}
+
+function cercaPersone() {
+  let text = this.value.toLowerCase().trim().split(/\s+/);
+
+  if (text.length == 0) {
+    showPeople(currentArray);
+    searchArray = [];
+    return;
+  }
+
+  searchArray = currentArray.filter((person) => {
+    let fullName = (person.name.first + " " + person.name.last).toLowerCase();
+
+    for (let parola of text) {
+      if (fullName.includes(parola)) {
+        return true;
+      }
+    }
+    return false;
+  });
+
+  currentPage = 0;
+  showPeople(searchArray);
+
 }

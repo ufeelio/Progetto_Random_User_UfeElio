@@ -60,6 +60,7 @@ $("#btnsWrapper button").hover(
 
 //#region Moldal impostazioni contenuto
 $("#btnGenera").click(function () {
+  pulisci();
   currentPage = 0;
   getPeople($("#rangePersone").val(), genereSelezionato);
   $("#bgScuro").hide(300);
@@ -235,16 +236,68 @@ $("#btnOrdina").click(function () {
         risultato = filtroNazioniDecrescente(listaNazioni);
       }
     }
+  } else {
+    if ($("#chkNome").prop("checked") && $("#chkCognome").prop("checked")) {
+      if ($("#rdbCre").prop("checked")) {
+        risultato = nomiCognomiCrescente();
+      } else {
+        risultato = nomiCognomiDecrescente();
+      }
+    } else if ($("#chkNome").prop("checked")) {
+      if ($("#rdbCre").prop("checked")) {
+        risultato = nomeCrescente();
+      } else {
+        risultato = nomeDecrescente();
+      }
+    } else if ($("#chkCognome").prop("checked")) {
+      if ($("#rdbCre").prop("checked")) {
+        risultato = cognomeCrescente();
+      } else {
+        risultato = cognomeDecrescente();
+      }
+    }
   }
 
   console.log(risultato);
-  if (risultato.length != 0) currentArray = risultato;
+  if (risultato.length != 0) {
+    currentArray = risultato;
+  }
+  else
+  {
+    alert("NESSUN UTENTE TROVATO!");
+  }
 
+  if (searchBar.value != "") {
+    risultato = cercaPersoneDue(risultato);
+    currentArray = risultato;
+  }
   currentPage = 0;
   showPeople(currentArray);
   $("#bgScuro").hide(300);
   $("#modalOrdinamenti").hide(300);
 });
+
+function cercaPersoneDue(risultato) {
+  let text = searchBar.value.toLowerCase().trim().split(/\s+/);
+  console.log(text)
+  if (text.length == 0) {
+    showPeople(risultato);
+    return;
+  }
+
+  let searchArray = risultato.filter((person) => {
+    let fullName = (person.name.first + " " + person.name.last).toLowerCase();
+
+    for (let parola of text) {
+      if (fullName.includes(parola)) {
+        return true;
+      }
+    }
+    return false;
+  });
+
+  return searchArray
+}
 
 let rdbCreChecked = false;
 $("#chkNome, #chkCognome").click(function () {
@@ -256,6 +309,7 @@ $("#chkNome, #chkCognome").click(function () {
 
 $("#pulisciNazioni").click(function () {
   pulisci();
+  currentPage = 0;
   currentArray = people;
   showPeople(currentArray);
   $("#bgScuro").hide(300);
@@ -270,6 +324,7 @@ function pulisci() {
   });
 
   $("#contenitoreSelect input").prop("checked", false);
+  searchBar.value = "";
 }
 
 $(".divNazioni img").hover(
