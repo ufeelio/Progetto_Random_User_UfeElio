@@ -1,4 +1,7 @@
 "use strict";
+window.addEventListener("resize", function() {
+  console.log("Width:", window.innerWidth, "Height:", window.innerHeight);
+});
 let people = [];
 let currentPage = 0;
 let currentArray = [];
@@ -61,12 +64,10 @@ function showPeople(peopleList) {
 
   $(".card").hover(
     function () {
-      // over
-      $(this).stop(true).animate({ width: "410px", height: "240px" }, 200);
+      $(this).addClass("hovered");
     },
     function () {
-      // out
-      $(this).stop(true).animate({ width: "400px", height: "230px" }, 200);
+      $(this).removeClass("hovered");
     }
   );
 
@@ -106,10 +107,8 @@ function previousClick() {
   } else {
     currentPage--;
   }
-  if(searchBar.value == 0)
-  showPeople(currentArray);
-  else
-  showPeople(searchArray);
+  if (searchBar.value == 0) showPeople(currentArray);
+  else showPeople(searchArray);
 }
 
 function nextClick() {
@@ -118,10 +117,8 @@ function nextClick() {
   } else {
     currentPage++;
   }
-  if(searchBar.value == 0)
-  showPeople(currentArray);
-  else
-  showPeople(searchArray);
+  if (searchBar.value == 0) showPeople(currentArray);
+  else showPeople(searchArray);
 }
 
 function changSpan(peopleList) {
@@ -151,5 +148,4 @@ function cercaPersone() {
 
   currentPage = 0;
   showPeople(searchArray);
-
 }

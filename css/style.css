@@ -28,7 +28,7 @@ body,
 header {
   font-size: 20pt;
   color: rgb(236, 236, 236);
-  width: 40%;
+  width: 50%;
   padding: 20px;
   margin: 0 auto;
   border: 3px solid rgb(12, 127, 180);
@@ -110,10 +110,11 @@ header div {
 }
 
 .mymodalHeader {
-  font-size: 15pt;
+  font-size: 14pt;
   text-align: center;
-  /* border: 1px solid black; */
   color: #0b4b66;
+  width: 90%;
+  margin: 0 auto;
 }
 
 .mymodalHeader p {
@@ -366,7 +367,7 @@ header div {
 
 .bg {
   background: linear-gradient(120deg, #0a2835, #203a43, #254655);
-  background-size: 400% 400%;
+  background-size: 500% 500%;
   animation: gradientMove 5s ease infinite;
 }
 

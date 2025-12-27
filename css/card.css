@@ -11,10 +11,16 @@
   font-size: 18pt;
   font-weight: bold;
   color: rgb(3, 32, 94);
+  transition: all 0.2s ease;
 }
 
 .card:hover {
     cursor: pointer;
+}
+
+.card.hovered {
+  width: 410px;
+  height: 240px;
 }
 
 .card img {

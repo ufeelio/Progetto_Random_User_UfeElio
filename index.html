@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/card.css" />
     <link rel="stylesheet" href="./css/nazioni.css" />
+    <link rel="stylesheet" href="./css/mediaQuery.css" />
     <!-- AXIOS -->
     <script src="./js/axios@1.13.min.js"></script>
     <!-- LIBRERIA AXIOS -->
@@ -40,8 +41,8 @@
       id="bgScuro">
       <div id="modalImpostazioni" class="mymodal">
         <p><button id="chiudiImpostazioni" class="btnChiudi">X</button></p>
-        <div class="mymodalHeader">
-          <h1>IMPOSTAZIONI DI GENERAZIONE</h1>
+        <div class="mymodalHeader" style="margin: 0 auto;">
+          <h1 style="text-align: center;">IMPOSTAZIONI DI GENERAZIONE</h1>
         </div>
         <div class="mymodalContent">
           <div style="font-size: 18pt; font-weight: bold">Numero Utenti</div>
@@ -231,7 +232,7 @@
           </div>
           <button id="btnAltri">Altro</button>
           <div id="contenitoreSelect" style="display: none">
-            <div style="display: inline-block; font-size: 16pt">Ordina per</div>
+            <div style="display: inline-block; font-size: 16pt">Ordina per</div><br>
             <div style="margin: 10px; display: inline-block">
               <label for="" style="font-size: 16pt; margin: 10px"
                 >Nome<input
@@ -247,9 +248,8 @@
                   value="cognome"
                   style="margin-left: 10px"
               id="chkCognome"/></label>
-            </div>
-            <div style="display: inline-block; font-size: 16pt">In ordine</div>
-
+            </div><br>
+            <div style="display: inline-block; font-size: 16pt">In ordine</div><br>
             <div style="margin: 10px; display: inline-block">
               <label for="" style="font-size: 16pt; margin: 10px"
                 >Crescente<input
