@@ -1,5 +1,28 @@
 "use strict";
 
+// NAZIONI CRESCENTE 
+function NazioniCrescente() {
+  return people.toSorted(function(person1, person2) {
+    let nat1 = person1.nat.toLowerCase();
+    let nat2 = person2.nat.toLowerCase();
+
+    if (nat1 < nat2) return -1;
+    if (nat1 > nat2) return 1;
+    return 0;
+  })
+}
+
+function NazioniDecrescente() {
+  return people.toSorted(function(person1, person2) {
+    let nat1 = person1.nat.toLowerCase();
+    let nat2 = person2.nat.toLowerCase();
+
+    if (nat1 < nat2) return 1;
+    if (nat1 > nat2) return -1;
+    return 0;
+  })
+}
+
 // FILTRO NAZIONI
 function filtroNazioni(listaNazioni) {
   console.log(listaNazioni);

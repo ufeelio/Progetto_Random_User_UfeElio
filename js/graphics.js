@@ -20,7 +20,6 @@ $("#chiudiOrdinamenti").click(function () {
   $("#modalOrdinamenti").hide(300);
 });
 
-
 $("#btnsWrapper button").hover(
   function () {
     $(this)
@@ -61,19 +60,19 @@ $("#btnsWrapper button").hover(
 
 //#region Moldal impostazioni contenuto
 $("#btnGenera").click(function () {
-  pulisci();
-  currentPage = 0;
-  getPeople($("#rangePersone").val(), genereSelezionato);
-  $("#bgScuro").hide(300);
-  $("#modalImpostazioni").hide(300);
+  genera();
 });
 
-$("#btnRigenera").click(function () {
+function genera() {
   pulisci();
   currentPage = 0;
   getPeople($("#rangePersone").val(), genereSelezionato);
   $("#bgScuro").hide(300);
   $("#modalImpostazioni").hide(300);
+}
+
+$("#btnRigenera").click(function () {
+  genera();
 });
 
 let genereSelezionato = "male";
@@ -264,15 +263,20 @@ $("#btnOrdina").click(function () {
       } else {
         risultato = cognomeDecrescente();
       }
+    } else {
+      if ($("#rdbCre").prop("checked")) {
+        risultato = NazioniCrescente();
+      } else {
+        risultato = NazioniDecrescente();
+      }
     }
+    
   }
 
   console.log(risultato);
   if (risultato.length != 0) {
     currentArray = risultato;
-  }
-  else
-  {
+  } else {
     alert("NESSUN UTENTE TROVATO!");
   }
 
@@ -288,7 +292,7 @@ $("#btnOrdina").click(function () {
 
 function cercaPersoneDue(risultato) {
   let text = searchBar.value.toLowerCase().trim().split(/\s+/);
-  console.log(text)
+  console.log(text);
   if (text.length == 0) {
     showPeople(risultato);
     return;
@@ -305,7 +309,7 @@ function cercaPersoneDue(risultato) {
     return false;
   });
 
-  return searchArray
+  return searchArray;
 }
 
 let rdbCreChecked = false;
