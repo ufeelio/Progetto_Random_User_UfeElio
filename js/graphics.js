@@ -20,6 +20,7 @@ $("#chiudiOrdinamenti").click(function () {
   $("#modalOrdinamenti").hide(300);
 });
 
+
 $("#btnsWrapper button").hover(
   function () {
     $(this)
@@ -60,6 +61,14 @@ $("#btnsWrapper button").hover(
 
 //#region Moldal impostazioni contenuto
 $("#btnGenera").click(function () {
+  pulisci();
+  currentPage = 0;
+  getPeople($("#rangePersone").val(), genereSelezionato);
+  $("#bgScuro").hide(300);
+  $("#modalImpostazioni").hide(300);
+});
+
+$("#btnRigenera").click(function () {
   pulisci();
   currentPage = 0;
   getPeople($("#rangePersone").val(), genereSelezionato);

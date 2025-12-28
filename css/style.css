@@ -56,6 +56,10 @@ header div {
   flex-wrap: wrap;
   border-radius: 10px;
 }
+#btnRigenera {
+  width: 250px;
+  height: 75px;
+}
 
 #btnsWrapper {
   margin-bottom: 100px;
@@ -72,6 +76,7 @@ header div {
   margin: 20px;
   border: 0px;
 }
+
 
 #btnsWrapper button:hover {
   cursor: pointer;
