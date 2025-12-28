@@ -130,6 +130,9 @@
   #modalCard {
     height: 70%;
   }
+  #navButtons {
+    font-size: 40pt;
+  }
 }
 
 @media (max-width: 932px) {
@@ -234,5 +237,8 @@
 @media (max-height: 700px) {
     #modalCard {
     height: 90%;
+  }
+  .card {
+    font-size: 16pt;
   }
 }
