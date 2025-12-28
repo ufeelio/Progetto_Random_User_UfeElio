@@ -11,7 +11,7 @@ Questo progetto è una semplice applicazione web, **realizzata da me con il supp
 - **CSS**
 - **JS**
 - **JQUERY**
-- **Ajax**
+- **AJAX**
 
 ## Funzionamento dell'applicazione
 
