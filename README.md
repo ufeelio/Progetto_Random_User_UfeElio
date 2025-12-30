@@ -31,19 +31,6 @@ Cliccando sul pulsante ***GENERA*** si chiuderà la finestra e verranno generati
 
 Cliccando sulla ***X Rossa*** in altro a destra si chiuderà la finestra senza generare nuovi utenti.
 
-### Pulsante Genera
-
-Dopo il click sul pulsante genera si aprirà una **finestra modale**.
-![alt text](image.png)
-
-In questa finestra modale si potranno gestire le impostazioni di ordinamento degli utenti generati.
-
-Cliccando sulla ***X Rossa*** in altro a destra si chiuderà la finestra senza cambiare l'ordine attuale degli utenti.
-
-Cliccando su ***Altro*** compariranno altre impostazioni di ordinamento.
-
-![alt text](img/readme/altriOrdinamenti.png)
-
 #### Ordinamenti possibili
 
 - Scegliendo una o più nazioni verranno visualizzati solo gli utenti di quelle nazioni
