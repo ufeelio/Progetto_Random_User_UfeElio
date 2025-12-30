@@ -1,7 +1,4 @@
 "use strict";
-window.addEventListener("resize", function() {
-  console.log("Width:", window.innerWidth, "Height:", window.innerHeight);
-});
 let people = [];
 let currentPage = 0;
 let currentArray = [];
@@ -89,7 +86,7 @@ function visualizzaDettagli(person) {
   imgPerson.src = `${person.picture.large}`;
   txtNome.value = person.name.first + " " + person.name.last;
   txtEmail.value = person.email;
-  txtData.value = person.registered.date.substring(0, 10);
+  txtData.value = person.dob.date.substring(0, 10);
   txtIndirizzo.value = person.location.country;
   txtTelefono.value = person.phone;
   txtPassword.value = person.login.password;
